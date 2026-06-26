@@ -1,0 +1,83 @@
+<section>
+<footer id="contacts">
+    <div class="container text-center">
+        <h2 class="mb-4">Контакты</h2>
+        <p>Телефон:<a href="tel:+79184570095">+7 (918) 457-00-95</a></p>
+        <p>Адрес: г. Краснодар, Сады Калинина, ул. Средняя, д. 15, офис 13</p>
+        <div class="mt-4 mb-4">
+            <iframe
+                src="https://yandex.ru/map-widget/v1/?ol=biz&oid=77321123311&z=17"
+                width="100%"
+                height="400"
+                frameborder="0">
+            </iframe>
+        </div>
+        <p>Официальный подрядчик АО «Краснодаргоргаз»</p>
+    </div>
+</footer>
+
+
+<div id="imageModal" class="image-modal">
+    <span class="close-modal" onclick="closeImage()">&times;</span>
+    <span class="gallery-prev" onclick="prevImage()">❮</span>
+    <img id="modalImage" class="modal-content">
+    <span class="gallery-next" onclick="nextImage()">❯</span>
+</div>
+</section>
+
+<!--<section id="contacts" class="contacts-section">-->
+<!--  <div class="container">-->
+<!--    <div class="row gy-4">-->
+<!--      <div class="col-md-6 contact-info">-->
+<!--        <h2>Контакты</h2>-->
+
+<!--        <div class="company-data">-->
+<!--          <div class="data-row">-->
+<!--            <strong>ООО «Газпром-Новации»</strong>-->
+<!--            <br>-->
+<!--            ИНН 236002348-->
+<!--          </div>-->
+
+<!--          <div class="data-row phone">-->
+<!--            <a href="tel:+79184570095">+7 (918) 457-00-95</a>-->
+<!--          </div>-->
+
+<!--          <div class="data-row schedule">-->
+<!--            Пн-Пт: с 09:00 до 19:00-->
+<!--            <br>-->
+<!--            Сб-Вс: Выходной-->
+<!--          </div>-->
+
+<!--          <div class="data-row address">-->
+<!--            г. Краснодар, ул. Чапаева, 69, оф. 301–303-->
+<!--            <br>-->
+<!--            Бесплатная парковка в центре города для наших клиентов.-->
+<!--          </div>-->
+
+<!--          <div class="data-row email">-->
+<!--            <a href="mailto:gns_info@mail.ru">gns_info@mail.ru</a>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div class="messengers">-->
+<!--          <a href="#" class="messenger-btn whatsapp">-->
+<!--            <img src="/static/img/messengers/whatsapp.svg" alt="WhatsApp">-->
+<!--          </a>-->
+<!--          <a href="#" class="messenger-btn telegram">-->
+<!--            <img src="/static/img/messengers/telegram.svg" alt="Telegram">-->
+<!--          </a>-->
+<!--          <a href="#" class="messenger-btn mail">-->
+<!--            <img src="/static/img/messengers/mail.svg" alt="Почта">-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="col-md-6 map-block">-->
+<!--        <iframe-->
+<!--          src="..."-->
+<!--          width="100%" height="400" frameborder="0">-->
+<!--        </iframe>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->

@@ -1,69 +1,35 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
 <section class="hero">
-
     <div class="container text-center">
-
-        <img src="/media/logo.png"
-             alt="ГСН"
-             class="hero-logo">
-
-        <h1 class="hero-title">
-            ГазСтройНовации
-        </h1>
-
-        <p class="hero-subtitle">
-            Газификация частных домов и коммерческих объектов
-        </p>
-
-        <p class="hero-text">
-            Проектирование • Строительство • Согласование
-        </p>
-
-        <p class="hero-phone">
-            +7 (918) 457-00-95
-        </p>
-
+        <img src="/media/logo.png" alt="ГСН" class="hero-logo">
+        <h1 class="hero-title">ГазСтройНовации</h1>
+        <p class="hero-subtitle">Газификация частных домов и коммерческих объектов</p>
+        <p class="hero-text">Проектирование • Строительство • Согласование</p>
+        <p class="hero-phone">+7 (918) 457-00-95</p>
         <a href="#contacts"
            class="btn btn-warning btn-lg px-5 py-3 mt-3">
             Получить консультацию
         </a>
-
         <a href="tel:+79184570095"
            class="btn btn-outline-light btn-lg px-5 py-3 mt-3 ms-2">
             Позвонить
         </a>
-
     </div>
-
 </section>
 
-
 <section id="about" class="about-section py-5">
-
-```
 <div class="container">
-
-    <h2 class="section-title text-center mb-5">
-        О компании
-    </h2>
-
+    <h2 class="section-title text-center mb-5">О компании</h2>
     <div class="about-intro">
-
         <h3>ООО «ГСН»</h3>
-
         <p>
             Выполняем полный комплекс работ в сфере газоснабжения —
             от инженерных изысканий и проектирования до строительства,
             поставки оборудования и ввода объекта в эксплуатацию.
         </p>
-
     </div>
-
     <div class="stats-grid">
-
         <div class="stat-card">
             <span>100%</span>
             <p>Комплексный подход</p>
@@ -73,76 +39,17 @@
             <span>24/7</span>
             <p>Поддержка заказчика</p>
         </div>
-
         <div class="stat-card">
             <span>ПИР</span>
             <p>Проектирование и изыскания</p>
         </div>
-
         <div class="stat-card">
             <span>СМР</span>
             <p>Строительно-монтажные работы</p>
         </div>
-
     </div>
-
-    <div class="about-grid">
-
-        <div class="about-card">
-            <div class="about-icon">📐</div>
-            <h4>Проектирование</h4>
-            <ul>
-                <li>Магистральные газопроводы</li>
-                <li>Распределительные сети</li>
-                <li>Внутриплощадочные газопроводы</li>
-                <li>Котельные и энергоцентры</li>
-                <li>Узлы учета газа</li>
-                <li>Прохождение экспертиз</li>
-            </ul>
-        </div>
-
-        <div class="about-card">
-            <div class="about-icon">🔥</div>
-            <h4>Котельные и газоснабжение</h4>
-            <ul>
-                <li>Блочно-модульные котельные</li>
-                <li>Паровые и водогрейные котельные</li>
-                <li>Газопоршневые установки</li>
-                <li>ИТП и ПРГ</li>
-                <li>Многоквартирные и частные дома</li>
-            </ul>
-        </div>
-
-        <div class="about-card">
-            <div class="about-icon">⚙️</div>
-            <h4>Строительно-монтажные работы</h4>
-            <ul>
-                <li>Газопроводы ПЭ и сталь</li>
-                <li>Обвязка котельных</li>
-                <li>Вентиляция и дымоудаление</li>
-                <li>КИПиА</li>
-                <li>Тепловые пункты</li>
-            </ul>
-        </div>
-
-        <div class="about-card">
-            <div class="about-icon">📦</div>
-            <h4>Поставка оборудования</h4>
-            <ul>
-                <li>Котельные установки</li>
-                <li>Газопоршневые установки</li>
-                <li>Узлы учета газа</li>
-                <li>Оборудование КИПиА</li>
-                <li>Тепловые пункты</li>
-            </ul>
-        </div>
-
-    </div>
-
     <div class="equipment-block">
-
-        <h4>Собственная материально-техническая база</h4>
-
+        <h3>Собственная материально-техническая база</h3>
         <p>
             Компания располагает профессиональным сварочным оборудованием,
             электромуфтовыми и стыковыми сварочными аппаратами,
@@ -150,35 +57,121 @@
             необходимым для выполнения полного комплекса работ
             на объектах газоснабжения.
         </p>
-
     </div>
-
     <div class="about-footer">
-
         <p>
             При необходимости специалисты ООО «ГСН» выезжают на объект,
             проводят обследование, предлагают оптимальное техническое решение,
             рассчитывают стоимость и сроки реализации проекта.
         </p>
-
     </div>
-
 </div>
-
 </section>
 
+<section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center section-title">Наши услуги</h2>
+    <div class="container">
+        <div class="row g-4 row-equal">
+            <div class="col-lg-6">
+                <div class="about-service-card">
+                    <div class="about-service-image">
+                        <img src="/media/icons/proekt.jpg" alt="">
+                     </div>
+                    <div class="about-service-content">
+                        <h4>Проектирование</h4>
+                        <ul>
+                            <li>Разрабатываем проекты газоснабжения для частных домов</li>
+                            <li>Внутриплощадочные газопроводы для коммерческих объектов и предприятий</li>
+                            <li>Магистральные газопроводы</li>
+                            <li>Котельные и энергоцентры</li>
+                            <li>Узлы учета газа</li>
+                            <li>Прохождение экспертиз</li>
+                        </ul>
+                        <h6>Подготавливаем всю необходимую документацию
+                        в соответствии с действующими нормами и требованиями.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-service-card">
+                    <div class="about-service-image">
+                        <img src="/media/icons/kotelnye.jpg" class="feature-icon">
+                    </div>
+                    <div class="about-service-content">
+                        <h4>Котельные и газоснабжение</h4>
+                        <ul>
+                            <li>Блочно-модульные котельные</li>
+                            <li>Паровые и водогрейные котельные</li>
+                            <li>Газопоршневые установки</li>
+                            <li>ИТП и ПРГ</li>
+                            <li>Многоквартирные и частные дома</li>
+                        </ul>
+                            <h6>Выполняем монтаж котельного оборудования,
+                                внутренних газовых сетей и систем отопления.
+                                Подбираем решения с учетом особенностей
+                                объекта и потребностей заказчика.
+                            </h6>
 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+            <div class="about-service-card">
+                <div class="about-service-image">
+                    <img src="/media/icons/gp.jpg" class="feature-icon">
+                    </div>
+                    <div class="about-service-content">
+                        <h4>Строительно-монтажные работы</h4>
+                        <ul>
+                            <li>Газопроводы ПЭ и сталь</li>
+                            <li>Обвязка котельных</li>
+                            <li>Вентиляция и дымоудаление</li>
+                            <li>КИПиА</li>
+                            <li>Тепловые пункты</li>
+                        </ul>
+                            <h6>Сопровождаем клиентов на всех этапах
+                                согласования проектной и исполнительной
+                                документации, взаимодействуем с
+                                ресурсоснабжающими организациями и
+                                контролирующими органами.
+                            </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+            <div class="about-service-card">
+                <div class="about-service-image">
+                    <img src="/media/icons/postavka.jpg" class="feature-icon">
+                </div>
+                    <div class="about-service-content">
+                        <h4>Поставка оборудования</h4>
+                        <ul>
+                            <li>Котельные установки</li>
+                            <li>Газопоршневые установки</li>
+                            <li>Узлы учета газа</li>
+                            <li>Оборудование КИПиА</li>
+                            <li>Тепловые пункты</li>
+                        </ul>
+                            <h6>Благодаря прямому сотрудничеству с
+                                производителями поставляем газовые
+                                котлы и оборудование по ценам ниже рыночных.
+                                Помогаем подобрать оптимальное решение
+                                для дома или бизнеса.
+                            </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
 
 <section class="py-5">
-
     <div class="container">
-
-        <h2 class="section-title text-uppercase">
-            Почему выбирают нас
-        </h2>
-
-        <div class="row g-4">
-
+        <h2 class="section-title text-uppercase">Почему выбирают нас</h2>
+        <div class="row g-4 row-equal">
             <div class="col-md-6">
                 <div class="feature-card">
                     <img src="/media/icons/time.jpg" class="feature-icon">
@@ -188,7 +181,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="feature-card">
                     <img src="/media/icons/quality.jpg" class="feature-icon">
@@ -198,7 +190,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="feature-card">
                     <img src="/media/icons/team.jpg" class="feature-icon">
@@ -208,7 +199,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="feature-card">
                     <img src="/media/icons/client.jpg" class="feature-icon">
@@ -218,7 +208,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="feature-card">
                     <img src="/media/icons/docs.jpg" class="feature-icon">
@@ -228,7 +217,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="feature-card">
                     <img src="/media/icons/key.jpg" class="feature-icon">
@@ -238,666 +226,269 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <section class="py-5">
-
     <div class="container">
-
-        <h2 class="section-title mb-5">
-            Этапы работы
-        </h2>
-
+        <h2 class="section-title mb-5">Этапы работы</h2>
         <div class="timeline">
-
             <div class="timeline-item">
-
-                <div class="timeline-number">
-                    01
-                </div>
-
-                <div class="timeline-content">
-
-                    <h3>Заявка 📞</h3>
-
-                    <p>
-                        Связываетесь с нами по телефону или в любом удобном Вам мессенджере по кнопке в левом нижнем углу.
+                <div class="timeline-number">01</div>
+                <div class="timeline-content"><h3>Заявка</h3>
+                    <p>Связываетесь с нами по телефону или в любом удобном
+                        Вам мессенджере по кнопке в левом нижнем углу.
                     </p>
-
                 </div>
-
             </div>
-
             <div class="timeline-item">
-
-                <div class="timeline-number">
-                    02
+                <div class="timeline-number">02</div>
+                <div class="timeline-content"><h3>Выезд специалиста</h3>
+                    <p>Выезжаем на объект, оцениваем объем работ и сроки.</p>
                 </div>
-
-                <div class="timeline-content">
-
-                    <h3>Выезд специалиста 🚗</h3>
-
-                    <p>
-                        Выезжаем на объект,
-                        оцениваем объем работ и сроки.
-                    </p>
-
-                </div>
-
             </div>
-
             <div class="timeline-item">
-
-                <div class="timeline-number">
-                    03
+                <div class="timeline-number">03</div>
+                <div class="timeline-content"><h3>Проектирование</h3>
+                    <p>Разрабатываем проектную документацию.</p>
                 </div>
-
-                <div class="timeline-content">
-
-                    <h3>Проектирование 📐</h3>
-
-                    <p>
-                        Разрабатываем проектную
-                        документацию.
-                    </p>
-
-                </div>
-
             </div>
-
             <div class="timeline-item">
-
-                <div class="timeline-number">
-                    04
+                <div class="timeline-number">04</div>
+                <div class="timeline-content"><h3>Согласование</h3>
+                    <p>Проходим необходимые согласования и экспертизы.</p>
                 </div>
-
-                <div class="timeline-content">
-
-                    <h3>Согласование 📄</h3>
-
-                    <p>
-                        Проходим необходимые
-                        согласования и экспертизы.
-                    </p>
-
-                </div>
-
             </div>
-
             <div class="timeline-item">
-
-                <div class="timeline-number">
-                    05
+                <div class="timeline-number">05</div>
+                <div class="timeline-content"><h3>Строительство</h3>
+                    <p>Выполняем строительно-монтажные работы на объекте.</p>
                 </div>
-
-                <div class="timeline-content">
-
-                    <h3>Строительство 🔧</h3>
-
-                    <p>
-                        Выполняем строительно-монтажные
-                        работы на объекте.
-                    </p>
-
-                </div>
-
             </div>
-
             <div class="timeline-item">
-
-                <div class="timeline-number">
-                    06
-                </div>
-
+                <div class="timeline-number">06</div>
                 <div class="timeline-content">
-
-                    <h3>Пуск газа 🔥</h3>
-
-                    <p>
-                        Сдаем объект и запускаем
-                        систему газоснабжения.
-                    </p>
-
+                    <h3>Пуск газа</h3>
+                    <p>Сдаем объект и запускаем систему газоснабжения.</p>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
-</section>
-
-<section class="py-5">
-
-    <div class="container">
-
-        <h2 class="text-center section-title">
-            Лицензии и допуски
-        </h2>
-
-        <div class="row">
-
-            <div class="col-md-3 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h3>📋</h3>
-
-                        <h5>
-                            Членство в СРО
-                        </h5>
-
-                        <p>
-                            Компания имеет необходимые допуски
-                            для выполнения проектных и
-                            строительно-монтажных работ.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-3 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h3>⚙️</h3>
-
-                        <h5>
-                            Аттестованные специалисты
-                        </h5>
-
-                        <p>
-                            В штате работают специалисты,
-                            имеющие необходимую квалификацию
-                            и профильное образование.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-3 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h3>🔥</h3>
-
-                        <h5>
-                            Работы на газовых объектах
-                        </h5>
-
-                        <p>
-                            Выполняем работы в строгом
-                            соответствии с действующими
-                            нормами и требованиями.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-3 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h3>🛡️</h3>
-
-                        <h5>
-                            Гарантия качества
-                        </h5>
-
-                        <p>
-                            Несём ответственность за качество
-                            выполненных работ и используемых
-                            материалов.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
 </section>
 
 <section id="documents" class="py-5">
-
     <div class="container">
-
-        <h2 class="text-center section-title">
-            Документы и допуски
-        </h2>
-
+        <h2 class="text-center section-title">Документы и допуски</h2>
         <div class="row">
-
             <div class="col-md-3 mb-4">
-
                 <div class="card h-100 document-card">
-
                     <img src="/media/documents/sro.jpg"
                          class="card-img-top"
                          alt="СРО">
-
                     <div class="card-body text-center">
-
-                        <h5>
-                            Свидетельство СРО
-                        </h5>
-
+                        <h5>Свидетельство СРО</h5>
                         <a href="/media/documents/sro.pdf"
                            target="_blank"
                            class="btn btn-primary mt-2">
                             Просмотреть
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
             <div class="col-md-3 mb-4">
-
                 <div class="card h-100 document-card">
-
                     <img src="/media/documents/naks.jpg"
                          class="card-img-top"
                          alt="НАКС">
-
                     <div class="card-body text-center">
-
-                        <h5>
-                            Аттестация НАКС
-                        </h5>
-
+                        <h5>Аттестация НАКС</h5>
                         <a href="/media/documents/naks.pdf"
                            target="_blank"
                            class="btn btn-primary mt-2">
                             Просмотреть
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
             <div class="col-md-3 mb-4">
-
                 <div class="card h-100 document-card">
-
                     <img src="/media/documents/certificate1.jpg"
                          class="card-img-top"
                          alt="Сертификат">
-
                     <div class="card-body text-center">
-
-                        <h5>
-                            Сертификат соответствия
-                        </h5>
-
+                        <h5>Сертификат соответствия</h5>
                         <a href="/media/documents/certificate1.pdf"
                            target="_blank"
                            class="btn btn-primary mt-2">
                             Просмотреть
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
             <div class="col-md-3 mb-4">
-
                 <div class="card h-100 document-card">
-
                     <img src="/media/documents/certificate2.jpg"
                          class="card-img-top"
                          alt="Сертификат">
-
-
                     <div class="card-body text-center">
-
-                        <h5>
-                            Технология сварки
-                        </h5>
-
+                        <h5>Технология сварки</h5>
                         <a href="/media/documents/certificate2.pdf"
                            target="_blank"
                            class="btn btn-primary mt-2">
                             Просмотреть
                         </a>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
-<section id="about_1" class="py-5">
-
-    <div class="container">
-
-        <h2 class="text-center section-title">
-            Почему выбирают нас
-        </h2>
-
-        <div class="row">
-
-            <div class="col-md-4 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h3>
-                            Опыт
-                        </h3>
-
-                        <p>
-                            Выполняем проекты любой сложности.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h4>
-                            Надёжность
-                        </h4>
-
-                        <p>
-                            Работаем официально и строго
-                            по нормативным требованиям.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body text-center">
-
-                        <h4>
-                            Выгодные цены
-                        </h4>
-
-                        <p>
-                            Поставляем оборудование напрямую
-                            от производителей.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section id="services" class="py-5">
-
-    <div class="container">
-
-        <h2 class="text-center section-title">
-            Наши услуги
-        </h2>
-
-        <div class="row">
-
-            {% for service in services %}
-
-            <div class="col-md-4 mb-4">
-
-                <div class="card h-100">
-
-                    <div class="card-body">
-
-                        <h4>
-                            {{ service.title }}
-                        </h4>
-
-                        <p>
-                            {{ service.description }}
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            {% endfor %}
-
-        </div>
-
-    </div>
-
-</section>
-
 
 <section id="projects" class="py-5">
-
     <div class="container">
-
-        <h2 class="text-center section-title">
-            Выполненные объекты
-        </h2>
-
-        <p class="text-center mb-5 fs-5">
-            Некоторые из реализованных нами проектов
-        </p>
-
+        <h2 class="text-center section-title">Выполненные объекты</h2>
+        <p class="text-center mb-5 fs-5">Некоторые из реализованных нами проектов</p>
         <div class="row">
-
             {% for project in projects %}
-
             <div class="col-lg-4 col-md-6 mb-4">
-
                 <div class="card h-100 project-card">
-
-                    <div id="carousel{{ project.id }}"
-                         class="carousel slide">
-
+                    <div id="carousel{{ project.id }}" class="carousel slide">
                         <div class="carousel-inner">
-
                             {% for image in project.images.all %}
-
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-
                                 <img src="{{ image.image.url }}"
                                      class="card-img-top gallery-image"
                                      alt="{{ project.title }}"
                                      onclick="openGallery({{ project.id }}, {{ forloop.counter0 }})">
-
                             </div>
-
                             {% endfor %}
-
                         </div>
-
                         {% if project.images.count > 1 %}
-
                         <button class="carousel-control-prev"
                                 type="button"
                                 data-bs-target="#carousel{{ project.id }}"
                                 data-bs-slide="prev">
-
                             <span class="carousel-control-prev-icon"></span>
-
                         </button>
-
                         <button class="carousel-control-next"
                                 type="button"
                                 data-bs-target="#carousel{{ project.id }}"
                                 data-bs-slide="next">
-
                             <span class="carousel-control-next-icon"></span>
-
                         </button>
-
                         {% endif %}
-
                     </div>
-
                     <div class="card-body">
-
                         <h5 class="project-title">
                             {{ project.title }}
                         </h5>
-
                     </div>
-
                 </div>
-
             </div>
-
             {% endfor %}
-
         </div>
-
     </div>
-
+<div class="text-center my-5">
+    <a href="{% url 'projects_gallery' %}"
+       class="btn btn-primary btn-lg px-3 fs-4">
+        Смотреть все объекты →
+    </a>
+</div>
 </section>
 
-
+<section>
 <footer id="contacts">
+    <div class="container">
+        <div class="row">
+            <!-- Блок контактов (слева) -->
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2 class="mb-4">Контакты</h2>
+                    <p>ООО "ГазСтройНовации» (сокращенно ООО "ГСН"</p>
+                    <p>ИНН 2310242148</p>
+                    <p>ОГРН 1252300060121</p>
+                    <p>Телефон:<a href="tel:+79184570095">+7 (918) 457-00-95</a></p>
+                    <p>E-mail: gsn_info@mail.ru</p>
+                    <p>Адрес: г. Краснодар, Сады Калинина, ул. Средняя, д. 15, офис 13</p>
+                    <p>Часы работы: пн-пт 9:00-17:00, сб-вс выходной</p>
+                    <p>Официальный подрядчик АО «Краснодаргоргаз»</p>
+                </div>
+            </div>
 
-    <div class="container text-center">
-
-        <h3 class="mb-4">
-            Контакты
-        </h3>
-
-        <p>
-            Телефон:
-            <a href="tel:+79184570095">
-                +7 (918) 457-00-95
-            </a>
-        </p>
-
-        <p>
-            Адрес:
-            г. Краснодар,
-            Сады Калинина,
-            ул. Средняя, д. 15, офис 13
-        </p>
-
-        <div class="mt-4 mb-4">
-
-            <iframe
-                src="https://yandex.ru/map-widget/v1/?ol=biz&oid=77321123311&z=17"
-                width="100%"
-                height="400"
-                frameborder="0">
-            </iframe>
-
+            <!-- Блок с картой (справа) -->
+            <div class="col-lg-6 map-block">
+                <div class="mt-4 mb-4">
+                    <iframe
+                        src="https://yandex.ru/map-widget/v1/?ol=biz&oid=77321123311&z=17"
+                        width="100%"
+                        height="400"
+                        frameborder="0">
+                    </iframe>
+                </div>
+            </div>
         </div>
-
-        <p>
-            Официальный подрядчик АО «Краснодаргоргаз»
-        </p>
-
     </div>
-
 </footer>
 
 <div id="imageModal" class="image-modal">
-
-    <span class="close-modal" onclick="closeImage()">
-        &times;
-    </span>
-
-    <span class="gallery-prev" onclick="prevImage()">
-        ❮
-    </span>
-
+    <span class="close-modal" onclick="closeImage()">&times;</span>
+    <span class="gallery-prev" onclick="prevImage()">❮</span>
     <img id="modalImage" class="modal-content">
-
-    <span class="gallery-next" onclick="nextImage()">
-        ❯
-    </span>
-
+    <span class="gallery-next" onclick="nextImage()">❯</span>
 </div>
-
+</section>
 
 <script>
-
-function openImage(imageUrl) {
-
-    document.getElementById('imageModal').style.display = 'block';
-
-    document.getElementById('modalImage').src = imageUrl;
-
+const galleries = {
+{% for project in projects %}
+    {{ project.id }}: [
+        {% for image in project.images.all %}
+            "{{ image.image.url }}",
+        {% endfor %}
+    ],
+{% endfor %}
+};
+let currentProject = null;
+let currentImage = 0;
+function openGallery(projectId, imageIndex) {
+    currentProject = projectId;
+    currentImage = imageIndex;
+    document.getElementById("imageModal").style.display = "block";
+    showImage();
 }
-
-function closeImage() {
-
-    document.getElementById('imageModal').style.display = 'none';
-
+function showImage() {
+    document.getElementById("modalImage").src =
+        galleries[currentProject][currentImage];
 }
-
-window.onclick = function(event) {
-
-    const modal = document.getElementById('imageModal');
-
-    if (event.target === modal) {
-        modal.style.display = 'none';
+function nextImage() {
+    currentImage++;
+    if (currentImage >= galleries[currentProject].length) {
+        currentImage = 0;
     }
-
+    showImage();
 }
-
+function prevImage() {
+    currentImage--;
+    if (currentImage < 0) {
+        currentImage =
+            galleries[currentProject].length - 1;
+    }
+    showImage();
+}
+function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+}
+document.addEventListener("keydown", function(e){
+    if(document.getElementById("imageModal").style.display !== "block")
+        return;
+    if(e.key === "ArrowRight")
+        nextImage();
+    if(e.key === "ArrowLeft")
+        prevImage();
+    if(e.key === "Escape")
+        closeImage();
+});
 </script>
 
 {% endblock %}

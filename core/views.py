@@ -17,3 +17,15 @@ def home(request):
         'home.html',
         context
     )
+
+def projects_gallery(request):
+
+    projects = Project.objects.all()
+
+    return render(
+        request,
+        'projects_gallery.html',
+        {
+            'projects': projects
+        }
+    )
