@@ -345,6 +345,119 @@
     </div>
 </section>
 
+<section id="faq" class="faq-section py-5">
+    <div class="container">
+        <h2 class="text-center section-title mb-5">Часто задаваемые вопросы</h2>
+
+        <div class="faq-wrapper">
+            {% for faq_item in faqs %}
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">{{ faq_item.question }}</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        {{ faq_item.answer }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <!-- Если нужно несколько статических примеров -->
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Как мне подвести газ к дому?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Подведение газораспределительной сети до границ негазифицированных
+                        домовладений осуществляется в рамках федеральной программы
+                        социальной газификации, а также в виде технического присоединения.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Что такое социальна газификация?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <ul>
+                            Социальная газификация — федеральная программа, предусматривающая подведение
+                            газораспределительной сети до границ негазифицированных домовладений в
+                            газифицированных населенных пунктах (догазификация) без привлечения средств граждан.</ul>
+
+                        <ul>Правообладатели земельных участков и расположенных на них домовладений,
+                            не подключённых к газу, могут подать заявку на подключение к сетям
+                            газораспределения в рамках догазификации.</ul>
+
+                        <ul>Услуга доступна физическим лицам, если их домовладение находится в
+                                границах газифицированных населённых пунктов</ul>
+
+                        <ul>Подведение газа в рамках догазификации бесплатно до границ:
+                            <ul><li>Земельного участка</li>
+                            <li>СНТ или ОНТ, расположенных в границах населённого пункта</li></ul>
+                        </ul>
+
+                        <ul>В рамках догазификации не осуществляется бесплатное подведение
+                            газа до СНТ или ОНТ, расположенных вне границ населённого пункта,
+                            а также к домовладениям, расположенным в СНТ или ОНТ
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Какие документы нужны для подключения газа?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <ul>
+                            <li>Паспорт собственника</li>
+                            <li>ИНН</li>
+                            <li>СНИЛС</li>
+                            <li>Ситуационный план</li>
+                            <li>Технический паспорт на дом</li>
+                            <li>Копия документа, подтверждающего право
+                                собственности или иное предусмотренное законом
+                                основание на объект капитального строительства
+                                и земельный участок, на котором расположены
+                                (будут располагаться) объекты капитального строительства заявителя.
+                                В случае если земельный участок принадлежит заявителю
+                                на ином законном основании, заявитель представляет
+                                согласие собственника земельного участка на использование этого участка на период
+                                строительства сетей газораспределения</li>
+                            <li>Доверенность или иные документы, подтверждающие полномочия представителя
+                                заявителя (в случае если заявка о подключении
+                                (технологическом присоединении) подается представителем заявителя)</li>
+                            <li>Расчет максимального часового расхода газа (не прилагается,
+                                если планируемый максимальный часовой расход газа не более 7 куб. метров/час)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span class="faq-question-text">Сколько стоит газификация дома?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Стоимость газификации зависит от удаленности объекта, сложности работ и выбранного оборудования. Точную стоимость можно узнать после выезда специалиста на участок.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="projects" class="py-5">
     <div class="container">
         <h2 class="text-center section-title">Выполненные объекты</h2>
@@ -489,6 +602,21 @@ document.addEventListener("keydown", function(e){
     if(e.key === "Escape")
         closeImage();
 });
+
+// Функция для FAQ аккордеона
+function toggleFAQ(element) {
+    const faqItem = element.closest('.faq-item');
+
+    // Закрываем все остальные открытые FAQ
+    document.querySelectorAll('.faq-item.active').forEach(item => {
+        if (item !== faqItem) {
+            item.classList.remove('active');
+        }
+    });
+
+    // Открываем/закрываем текущий
+    faqItem.classList.toggle('active');
+}
 </script>
 
 {% endblock %}

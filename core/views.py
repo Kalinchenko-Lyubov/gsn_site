@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from core.models import Service, Project
+from core.models import Service, Project, FAQ
 
 
 def home(request):
@@ -29,3 +29,15 @@ def projects_gallery(request):
             'projects': projects
         }
     )
+
+
+def home(request):
+    projects = Project.objects.all()  # Получаем все проекты
+    faqs = FAQ.objects.filter(is_active=True)  # Получаем активные FAQ
+
+    context = {
+        'projects': projects,
+        'faqs': faqs,
+    }
+
+    return render(request, 'home.html', context)

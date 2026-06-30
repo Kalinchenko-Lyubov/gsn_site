@@ -51,3 +51,18 @@ class ProjectImage(models.Model):
     class Meta:
         verbose_name = 'Фотография объекта'
         verbose_name_plural = 'Фотографии объектов'
+
+class FAQ(models.Model):
+    question = models.CharField('Вопрос', max_length=300)
+    answer = models.TextField('Ответ')
+    order = models.PositiveIntegerField('Порядок', default=0)
+    is_active = models.BooleanField('Активен', default=True)
+    created_at = models.DateTimeField('Дата создания', auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'FAQ'
+        verbose_name_plural = 'FAQ'
+        ordering = ['order', 'created_at']
+
+    def __str__(self):
+        return self.question
