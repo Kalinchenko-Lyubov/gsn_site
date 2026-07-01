@@ -24,6 +24,12 @@ class Project(models.Model):
         verbose_name='Название объекта'
     )
 
+    # ДОБАВЬТЕ это поле:
+    show_on_projects_page = models.BooleanField(
+        verbose_name='Отображать на странице проектов',
+        default=False
+    )
+
     def __str__(self):
         return self.title
 
