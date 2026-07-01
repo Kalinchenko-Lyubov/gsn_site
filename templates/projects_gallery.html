@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="gallery-hero">
+    <div class="container text-center">
+        <h1 class="gallery-hero-title">Все выполненные объекты</h1>
+        <p class="gallery-hero-subtitle">Наши работы по газификации частных домов и коммерческих объектов</p>
+    </div>
+</section>
+
+<section class="gallery-section py-5">
+    <div class="container">
+        {% if projects %}
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card project-card h-100">
+                    <div class="project-card-image-wrapper">
+                        {% if project.images.all %}
+                        <div id="carousel{{ project.id }}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for image in project.images.all %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                    <img src="{{ image.image.url }}"
+                                         class="d-block w-100 project-card-image"
+                                         alt="{{ project.title }} - фото {{ forloop.counter }}"
+                                         onclick="openGallery({{ project.id }}, {{ forloop.counter0 }})"
+                                         loading="lazy">
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% if project.images.count > 1 %}
+                            <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carousel{{ project.id }}"
+                                    data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Предыдущее</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carousel{{ project.id }}"
+                                    data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Следующее</span>
+                            </button>
+                            {% endif %}
+                        </div>
+                        {% else %}
+                        <div class="no-image-placeholder">
+                            <i class="fas fa-image fa-3x"></i>
+                            <p>Фото отсутствует</p>
+                        </div>
+                        {% endif %}
+
+                        {% if project.images.count > 0 %}
+                        <div class="photo-count-badge">
+                            <i class="fas fa-camera"></i>
+                            {{ project.images.count }}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        {% if project.description %}
+                        <p class="card-text">{{ project.description|truncatewords:20 }}</p>
+                        {% endif %}
+                        <div class="project-meta">
+                            {% if project.address %}
+                            <span class="project-location">
+                                <i class="fas fa-map-marker-alt"></i> {{ project.address }}
+                            </span>
+                            {% endif %}
+                            {% if project.completion_date %}
+                            <span class="project-date">
+                                <i class="far fa-calendar-alt"></i> {{ project.completion_date|date:"Y" }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary btn-sm"
+                                onclick="openGallery({{ project.id }}, 0)"
+                                {% if not project.images.all %}disabled{% endif %}>
+                            <i class="fas fa-expand"></i> Смотреть фото
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="fas fa-folder-open fa-4x text-muted mb-3"></i>
+            <h3 class="text-muted">Проекты пока не добавлены</h3>
+            <p class="text-muted">Скоро здесь появятся наши выполненные работы</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Данные для галереи на этой странице
+galleries = {
+{% for project in projects %}
+    {{ project.id }}: [
+        {% for image in project.images.all %}
+            "{{ image.image.url }}",
+        {% endfor %}
+    ],
+{% endfor %}
+};
+console.log('Данные для галереи загружены:', galleries);
+</script>
+{% endblock %}

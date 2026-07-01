@@ -49,14 +49,100 @@
         <img src="/media/icons/max.svg" alt="MAX">
     </a>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ========== Модальное окно для галереи ========== -->
 <div id="imageModal" class="image-modal">
-    <span class="close-modal" onclick="closeImage()">
-        &times;
-    </span>
+    <span class="close-modal" onclick="closeImage()">&times;</span>
     <span class="gallery-prev" onclick="prevImage()">❮</span>
     <img id="modalImage" class="modal-content">
     <span class="gallery-next" onclick="nextImage()">❯</span>
 </div>
+
+<!-- ========== Bootstrap JS ========== -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ========== Скрипт галереи ========== -->
+<script>
+// Глобальные переменные
+let galleries = {};
+let currentProject = null;
+let currentImage = 0;
+
+// Открыть галерею
+function openGallery(projectId, imageIndex) {
+    console.log('openGallery called:', projectId, imageIndex);
+
+    if (!galleries[projectId] || galleries[projectId].length === 0) {
+        console.warn('Нет изображений для проекта:', projectId);
+        return;
+    }
+
+    currentProject = projectId;
+    currentImage = imageIndex;
+    document.getElementById("imageModal").style.display = "block";
+    document.body.style.overflow = "hidden";
+    showImage();
+}
+
+// Показать изображение
+function showImage() {
+    if (!currentProject || !galleries[currentProject]) return;
+    const img = document.getElementById("modalImage");
+    img.src = galleries[currentProject][currentImage];
+}
+
+// Следующее изображение
+function nextImage() {
+    if (!currentProject || !galleries[currentProject]) return;
+    currentImage = (currentImage + 1) % galleries[currentProject].length;
+    showImage();
+}
+
+// Предыдущее изображение
+function prevImage() {
+    if (!currentProject || !galleries[currentProject]) return;
+    currentImage = (currentImage - 1 + galleries[currentProject].length) % galleries[currentProject].length;
+    showImage();
+}
+
+// Закрыть галерею
+function closeImage() {
+    document.getElementById("imageModal").style.display = "none";
+    document.body.style.overflow = "auto";
+    currentProject = null;
+    currentImage = 0;
+}
+
+// Навигация с клавиатуры
+document.addEventListener("keydown", function(e){
+    const modal = document.getElementById("imageModal");
+    if (modal.style.display !== "block") return;
+
+    switch(e.key) {
+        case "ArrowRight":
+            nextImage();
+            break;
+        case "ArrowLeft":
+            prevImage();
+            break;
+        case "Escape":
+            closeImage();
+            break;
+    }
+});
+
+// Закрытие по клику на фон
+document.getElementById("imageModal").addEventListener("click", function(e) {
+    if (e.target === this) {
+        closeImage();
+    }
+});
+
+console.log('Галерея загружена. Функции: openGallery, nextImage, prevImage, closeImage');
+</script>
+
+<!-- ========== Блок для дополнительных скриптов ========== -->
+{% block extra_js %}{% endblock %}
+
 </body>
 </html>

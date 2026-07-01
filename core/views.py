@@ -19,16 +19,8 @@ def home(request):
     )
 
 def projects_gallery(request):
-
-    projects = Project.objects.all()
-
-    return render(
-        request,
-        'projects_gallery.html',
-        {
-            'projects': projects
-        }
-    )
+    projects = Project.objects.prefetch_related('images').all()
+    return render(request, 'projects_gallery.html', {'projects': projects})
 
 
 def home(request):

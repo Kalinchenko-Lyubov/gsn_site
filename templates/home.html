@@ -113,7 +113,6 @@
                                 Подбираем решения с учетом особенностей
                                 объекта и потребностей заказчика.
                             </h6>
-
                     </div>
                 </div>
             </div>
@@ -367,7 +366,7 @@
             <!-- Если нужно несколько статических примеров -->
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span class="faq-question-text">Как мне подвести газ к дому?</span>
+                    <span class="faq-question-text"><h5>Как мне подвести газ к дому?</h5></span>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
@@ -381,7 +380,7 @@
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span class="faq-question-text">Что такое социальна газификация?</span>
+                    <span class="faq-question-text"><h5>Что такое социальна газификация?</h5></span>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
@@ -413,7 +412,7 @@
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span class="faq-question-text">Какие документы нужны для подключения газа?</span>
+                    <span class="faq-question-text"><h5>Какие документы нужны для подключения газа?</h5></span>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
@@ -445,7 +444,7 @@
 
             <div class="faq-item">
                 <div class="faq-question" onclick="toggleFAQ(this)">
-                    <span class="faq-question-text">Сколько стоит газификация дома?</span>
+                    <span class="faq-question-text"><h5>Сколько стоит газификация дома?</h5></span>
                     <span class="faq-toggle">+</span>
                 </div>
                 <div class="faq-answer">
@@ -553,7 +552,8 @@
 </section>
 
 <script>
-const galleries = {
+// Данные для галереи
+galleries = {
 {% for project in projects %}
     {{ project.id }}: [
         {% for image in project.images.all %}
@@ -562,46 +562,6 @@ const galleries = {
     ],
 {% endfor %}
 };
-let currentProject = null;
-let currentImage = 0;
-function openGallery(projectId, imageIndex) {
-    currentProject = projectId;
-    currentImage = imageIndex;
-    document.getElementById("imageModal").style.display = "block";
-    showImage();
-}
-function showImage() {
-    document.getElementById("modalImage").src =
-        galleries[currentProject][currentImage];
-}
-function nextImage() {
-    currentImage++;
-    if (currentImage >= galleries[currentProject].length) {
-        currentImage = 0;
-    }
-    showImage();
-}
-function prevImage() {
-    currentImage--;
-    if (currentImage < 0) {
-        currentImage =
-            galleries[currentProject].length - 1;
-    }
-    showImage();
-}
-function closeImage() {
-    document.getElementById("imageModal").style.display = "none";
-}
-document.addEventListener("keydown", function(e){
-    if(document.getElementById("imageModal").style.display !== "block")
-        return;
-    if(e.key === "ArrowRight")
-        nextImage();
-    if(e.key === "ArrowLeft")
-        prevImage();
-    if(e.key === "Escape")
-        closeImage();
-});
 
 // Функция для FAQ аккордеона
 function toggleFAQ(element) {
