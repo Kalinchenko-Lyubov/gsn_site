@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: gsn-site
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: gunicorn gsn_site.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: DJANGO_SETTINGS_MODULE
+        value: gsn_site.settings
+      - key: SECRET_KEY
+        value: ваш-секретный-ключ
+      - key: DEBUG
+        value: False
