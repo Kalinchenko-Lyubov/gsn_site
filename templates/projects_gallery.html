@@ -18,7 +18,7 @@
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card project-card h-100">
                     <div class="project-card-image-wrapper">
-                        {% with photos=project_photos|get_item:project.name %}
+                        {% with photos=project_photos|get_item:project.title %}
                         {% if photos %}
                         <div id="carousel{{ project.id }}" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
@@ -26,7 +26,7 @@
                                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                                     <img src="/media/{{ photo }}"
                                          class="d-block w-100 project-card-image"
-                                         alt="{{ project.name }} - фото {{ forloop.counter }}"
+                                         alt="{{ project.title }} - фото {{ forloop.counter }}"
                                          onclick="openGallery({{ project.id }}, {{ forloop.counter0 }})"
                                          loading="lazy">
                                 </div>
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="card-body">
-                        <h5 class="card-title">{{ project.name }}</h5>
+                        <h5 class="card-title">{{ project.title }}</h5>
                         {% if project.description %}
                         <p class="card-text">{{ project.description|truncatewords:20 }}</p>
                         {% endif %}
@@ -85,7 +85,7 @@
                     <div class="card-footer">
                         <button class="btn btn-primary btn-sm"
                                 onclick="openGallery({{ project.id }}, 0)"
-                                {% with photos=project_photos|get_item:project.name %}{% if not photos %}disabled{% endif %}{% endwith %}>
+                                {% with photos=project_photos|get_item:project.title %}{% if not photos %}disabled{% endif %}{% endwith %}>
                             <i class="fas fa-expand"></i> Смотреть фото
                         </button>
                     </div>
@@ -109,7 +109,7 @@
 // Данные для галереи на этой странице
 galleries = {
 {% for project in projects %}
-    {% with photos=project_photos|get_item:project.name %}
+    {% with photos=project_photos|get_item:project.title %}
     {{ project.id }}: [
         {% for photo in photos %}
             "/media/{{ photo }}",

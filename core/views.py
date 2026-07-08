@@ -10,13 +10,13 @@ def projects_gallery(request):
     # Добавляем фото для каждого проекта
     project_photos = {}
     for project in projects:
-        project_dir = os.path.join(settings.MEDIA_ROOT, 'projects', project.name)
+        project_dir = os.path.join(settings.MEDIA_ROOT, 'projects', project.title)
         if os.path.exists(project_dir):
             photos = []
             for file in os.listdir(project_dir):
                 if file.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
-                    photos.append(f'projects/{project.name}/{file}')
-            project_photos[project.name] = photos
+                    photos.append(f'projects/{project.title}/{file}')
+            project_photos[project.title] = photos
 
     return render(request, 'projects_gallery.html', {
         'projects': projects,
@@ -30,13 +30,13 @@ def home(request):
     # Добавляем фото для главной
     project_photos = {}
     for project in projects:
-        project_dir = os.path.join(settings.MEDIA_ROOT, 'projects', project.name)
+        project_dir = os.path.join(settings.MEDIA_ROOT, 'projects', project.title)
         if os.path.exists(project_dir):
             photos = []
             for file in os.listdir(project_dir):
                 if file.lower().endswith(('.jpg', '.jpeg', '.png', '.webp', '.gif')):
-                    photos.append(f'projects/{project.name}/{file}')
-            project_photos[project.name] = photos
+                    photos.append(f'projects/{project.title}/{file}')
+            project_photos[project.title] = photos
 
     faqs = FAQ.objects.filter(is_active=True)
 
