@@ -471,18 +471,20 @@
             {% for project in projects %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100 project-card">
+                    {% with photos=project_photos|get_item:project.name %}
+                    {% if photos %}
                     <div id="carousel{{ project.id }}" class="carousel slide">
                         <div class="carousel-inner">
-                            {% for image in project.images.all %}
+                            {% for photo in photos %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                <img src="{{ image.image.url }}"
+                                <img src="/media/{{ photo }}"
                                      class="card-img-top gallery-image"
-                                     alt="{{ project.title }}"
+                                     alt="{{ project.name }}"
                                      onclick="openGallery({{ project.id }}, {{ forloop.counter0 }})">
                             </div>
                             {% endfor %}
                         </div>
-                        {% if project.images.count > 1 %}
+                        {% if photos|length > 1 %}
                         <button class="carousel-control-prev"
                                 type="button"
                                 data-bs-target="#carousel{{ project.id }}"
@@ -497,9 +499,16 @@
                         </button>
                         {% endif %}
                     </div>
+                    {% else %}
+                    <div class="no-image-placeholder p-5 text-center">
+                        <i class="fas fa-image fa-3x text-muted"></i>
+                        <p class="text-muted mt-2">Фото отсутствует</p>
+                    </div>
+                    {% endif %}
+                    {% endwith %}
                     <div class="card-body">
                         <h5 class="project-title">
-                            {{ project.title }}
+                            {{ project.name }}
                         </h5>
                     </div>
                 </div>
@@ -507,12 +516,12 @@
             {% endfor %}
         </div>
     </div>
-<div class="text-center my-5">
-    <a href="{% url 'projects_gallery' %}"
-       class="btn btn-primary btn-lg px-3 fs-4">
-        Смотреть все объекты →
-    </a>
-</div>
+    <div class="text-center my-5">
+        <a href="{% url 'projects_gallery' %}"
+           class="btn btn-primary btn-lg px-3 fs-4">
+            Смотреть все объекты →
+        </a>
+    </div>
 </section>
 
 <section>
@@ -561,11 +570,13 @@
 // Данные для галереи
 galleries = {
 {% for project in projects %}
+    {% with photos=project_photos|get_item:project.name %}
     {{ project.id }}: [
-        {% for image in project.images.all %}
-            "{{ image.image.url }}",
+        {% for photo in photos %}
+            "/media/{{ photo }}",
         {% endfor %}
     ],
+    {% endwith %}
 {% endfor %}
 };
 
