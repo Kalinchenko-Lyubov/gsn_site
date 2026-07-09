@@ -59,9 +59,10 @@
     </a>
 
     <!-- Telegram -->
-    <a href="tg://msg?to=%2B79184570095&text=Здравствуйте!%20Меня%20интересует%20газификация"
+    <a href="https://t.me/+79184570095"
        target="_blank"
-       title="Telegram">
+       title="Telegram"
+       id="telegram-link">
         <img src="/media/icons/telegram.svg" alt="Telegram">
     </a>
 
@@ -72,6 +73,22 @@
         <img src="/media/icons/max.svg" alt="MAX">
     </a>
 </div>
+
+<script>
+(function() {
+    // Проверяем, что это мобильное устройство
+    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Меняем ссылку Telegram на мобильную
+        var telegramLink = document.getElementById('telegram-link');
+        if (telegramLink) {
+            telegramLink.href = 'tg://msg?to=%2B79184570095&text=Здравствуйте!%20Меня%20интересует%20газификация';
+        }
+    }
+    // Для компьютера остаётся https://t.me/+79184570095
+})();
+</script>
 
 <!-- ========== Модальное окно для галереи ========== -->
 <div id="imageModal" class="image-modal">
