@@ -75,19 +75,11 @@
 </div>
 
 <script>
-(function() {
-    // Проверяем, что это мобильное устройство
-    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        // Меняем ссылку Telegram на мобильную
-        var telegramLink = document.getElementById('telegram-link');
-        if (telegramLink) {
-            telegramLink.href = 'tg://msg?to=%2B79184570095&text=Здравствуйте!%20Меня%20интересует%20газификация';
-        }
-    }
-    // Для компьютера остаётся https://t.me/+79184570095
-})();
+// Проверяем мобильное устройство
+if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // Для мобильных используем прямую ссылку tg://
+    document.getElementById('telegram-link').href = 'tg://join?invite=udmpQCGzPLw4OWY6';
+}
 </script>
 
 <!-- ========== Модальное окно для галереи ========== -->
