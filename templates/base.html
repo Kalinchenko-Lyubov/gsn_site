@@ -39,28 +39,52 @@
 {% endblock %}
 
 <!--<div class="messenger-buttons">-->
-<!--    <a href="https://wa.me/79184570095" target="_blank" title="WhatsApp">-->
+<!--    <a href="https://chat.whatsapp.com/DA6X3KqErr3AvGGRQNAQ0s" target="_blank" title="WhatsApp">-->
 <!--        <img src="/media/icons/whatsapp.svg" alt="WhatsApp">-->
 <!--    </a>-->
-<!--    <a href="https://t.me/79184570095" target="_blank" title="Telegram">-->
+<!--    <a href="https://t.me/+udmpQCGzPLw4OWY6" target="_blank" title="Telegram">-->
 <!--        <img src="/media/icons/telegram.svg" alt="Telegram">-->
 <!--    </a>-->
-<!--    <a href="https://max.ru/79184570095" target="_blank" title="MAX">-->
+<!--    <a href="https://max.ru/join/SipO8kjJkcEzvmvDS4WiImypJ2Je3PLiz4JXZ_SKw2U" target="_blank" title="MAX">-->
 <!--        <img src="/media/icons/max.svg" alt="MAX">-->
 <!--    </a>-->
 <!--</div>-->
 
 <div class="messenger-buttons">
-    <a href="https://chat.whatsapp.com/DA6X3KqErr3AvGGRQNAQ0s" target="_blank" title="WhatsApp">
+    <!-- WhatsApp (работает на всех устройствах) -->
+    <a href="https://wa.me/79184570095?text=Здравствуйте!%20Меня%20интересует%20газификация"
+       target="_blank"
+       title="WhatsApp">
         <img src="/media/icons/whatsapp.svg" alt="WhatsApp">
     </a>
-    <a href="https://t.me/+udmpQCGzPLw4OWY6" target="_blank" title="Telegram">
+
+    <!-- Telegram (исправлено для телефона) -->
+    <a href="tg://resolve?domain=liubov15"
+       target="_blank"
+       title="Telegram">
         <img src="/media/icons/telegram.svg" alt="Telegram">
     </a>
-    <a href="https://max.ru/join/SipO8kjJkcEzvmvDS4WiImypJ2Je3PLiz4JXZ_SKw2U" target="_blank" title="MAX">
+
+    <!-- MAX (работает, оставляем) -->
+    <a href="https://max.ru/join/SipO8kjJkcEzvmvDS4WiImypJ2Je3PLiz4JXZ_SKw2U"
+       target="_blank"
+       title="MAX">
         <img src="/media/icons/max.svg" alt="MAX">
     </a>
 </div>
+
+<!-- Добавьте JavaScript для автоматического выбора ссылки -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Если пользователь на телефоне
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        // Меняем Telegram ссылку на мобильную
+        document.querySelector('a[title="Telegram"]').href = 'tg://resolve?domain=gsn_krd';
+        // Меняем WhatsApp ссылку на мобильную
+        document.querySelector('a[title="WhatsApp"]').href = 'https://wa.me/79184570095?text=Здравствуйте!%20Меня%20интересует%20газификация';
+    }
+});
+</script>
 
 <!-- ========== Модальное окно для галереи ========== -->
 <div id="imageModal" class="image-modal">
