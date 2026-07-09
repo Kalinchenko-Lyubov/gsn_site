@@ -51,40 +51,27 @@
 <!--</div>-->
 
 <div class="messenger-buttons">
-    <!-- WhatsApp (работает на всех устройствах) -->
+    <!-- WhatsApp -->
     <a href="https://wa.me/79184570095?text=Здравствуйте!%20Меня%20интересует%20газификация"
        target="_blank"
        title="WhatsApp">
         <img src="/media/icons/whatsapp.svg" alt="WhatsApp">
     </a>
 
-    <!-- Telegram (исправлено для телефона) -->
-    <a href="tg://resolve?domain=@liubov15"
+    <!-- Telegram -->
+    <a href="tg://msg?to=%2B79184570095&text=Здравствуйте!%20Меня%20интересует%20газификация"
        target="_blank"
        title="Telegram">
         <img src="/media/icons/telegram.svg" alt="Telegram">
     </a>
 
-    <!-- MAX (работает, оставляем) -->
+    <!-- MAX -->
     <a href="https://max.ru/join/SipO8kjJkcEzvmvDS4WiImypJ2Je3PLiz4JXZ_SKw2U"
        target="_blank"
        title="MAX">
         <img src="/media/icons/max.svg" alt="MAX">
     </a>
 </div>
-
-<!-- Добавьте JavaScript для автоматического выбора ссылки -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Если пользователь на телефоне
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        // Меняем Telegram ссылку на мобильную
-        document.querySelector('a[title="Telegram"]').href = 'tg://resolve?domain=gsn_krd';
-        // Меняем WhatsApp ссылку на мобильную
-        document.querySelector('a[title="WhatsApp"]').href = 'https://wa.me/79184570095?text=Здравствуйте!%20Меня%20интересует%20газификация';
-    }
-});
-</script>
 
 <!-- ========== Модальное окно для галереи ========== -->
 <div id="imageModal" class="image-modal">
